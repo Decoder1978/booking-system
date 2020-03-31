@@ -2,6 +2,14 @@
 
 <p align="center">🎉 Booking reservation system built with Codeigniter</p>
 
+## ✨ Prerequisites
+
+* XAMPP
+* Git
+* PHP 7
+
+Before you proceed to installation, make sure you have installed `XAMPP` first and import the database in `phpmyadmin`.
+
 ## ✨ Installation
 
 * `git clone https://github.com/isaacdarcilla/booking-system.git` - clone the repository
@@ -24,26 +32,14 @@ $db['default'] = array(
 
 More screenshot can be found in ```screenshots``` folder.
 
-Home Tab  | Desktop Tab
+Home  | Search
 ------------- | -------------
-![App](https://github.com/isaacdarcilla/f7-mobile/blob/master/screenshot/_home_isaac_Desktop_Dev_Vue_desktop-vue_www_index.html%20(2).png?raw=true) | ![App](https://github.com/isaacdarcilla/f7-mobile/blob/master/screenshot/_home_isaac_Desktop_Dev_Vue_desktop-vue_www_index.html%20(3).png)
-
-## ✨ Demonstration
-
-* `git clone https://github.com/isaacdarcilla/f7-mobile.git` - clone the repository
-* `cd f7-mobile` - change to project directory
-* `cd www` - change to demo directory
-
+![App](https://github.com/isaacdarcilla/booking-system/blob/master/screenshots/DeepinScreenshot_20200331180906.png) | ![App](https://github.com/isaacdarcilla/booking-system/blob/master/screenshots/DeepinScreenshot_20200331180935.png)
 
 ## ✨ License
 
 [Apache 2.0 License](https://github.com/isaacdarcilla/DesktopQuery/blob/master/LICENSE)
 
-## ✨ WebPack
-
-There is a webpack bundler setup. It compiles and bundles all "front-end" resources. You should work only with files located in `/src` folder. Webpack config located in `build/webpack.config.js`.
-
-Webpack has specific way of handling static assets (CSS files, images, audios). You can learn more about correct way of doing things on [official webpack documentation](https://webpack.js.org/guides/asset-management/).
 
 ## 💻 Developer
 
