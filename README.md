@@ -28,6 +28,12 @@ $db['default'] = array(
 
 * Edit server credentials and database name
 
+
+## 💻 Demonstration
+
+* Username: `isaac@email.com`
+* Password: `user`
+
 ## ✨ Screenshot
 
 More screenshot can be found in ```screenshots``` folder.
@@ -39,7 +45,6 @@ Home  | Search
 ## ✨ License
 
 [Apache 2.0 License](https://github.com/isaacdarcilla/DesktopQuery/blob/master/LICENSE)
-
 
 ## 💻 Developer
 
