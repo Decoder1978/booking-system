@@ -24,6 +24,7 @@ $db['default'] = array(
     'username' => 'root',
     'password' => '',
     'database' => 'booking',
+    ...
 ```
 
 * Edit server credentials and database name
