@@ -28,7 +28,7 @@
             </div> 
 <?php endif; ?>
 
- <?php if($this->permission->method('account','create')->access()): ?>
+ <!-- <?php if($this->permission->method('account','create')->access()): ?>
             <div class="col-sm-12">
                 <div class="panel panel-bd">
                     <div class="panel-body">
@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </div> 
-<?php endif; ?>
+<?php endif; ?> -->
         </div>
     </div>
  
