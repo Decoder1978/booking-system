@@ -24,9 +24,16 @@ $db['default'] = array(
     'username' => 'root',
     'password' => '',
     'database' => 'booking',
+    ...
 ```
 
 * Edit server credentials and database name
+
+
+## 💻 Demonstration
+
+* Username: `isaac@email.com`
+* Password: `user`
 
 ## ✨ Screenshot
 
@@ -39,7 +46,6 @@ Home  | Search
 ## ✨ License
 
 [Apache 2.0 License](https://github.com/isaacdarcilla/DesktopQuery/blob/master/LICENSE)
-
 
 ## 💻 Developer
 
