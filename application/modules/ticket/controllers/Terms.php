@@ -19,7 +19,7 @@ class Terms extends MX_Controller {
   $data['title'] = display('add');
   #-------------------------------#
   $this->form_validation->set_rules('how_to_pay', display('how_to_pay')  ,'required|max_length[1000]');
-  $this->form_validation->set_rules('terms_and_condition', display('terms_and_condition')  ,'max_length[1000]');
+  $this->form_validation->set_rules('terms_and_condition', display('terms_and_condition')  ,'max_length[10000]');
   #-------------------------------#
      $data['term']   = (Object) $postData = [
         'id'                 => $this->input->post('id'), 

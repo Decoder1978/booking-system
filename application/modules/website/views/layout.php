@@ -71,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
                 <ul class="dropdown-menu">
                     <?php if(empty($this->session->userdata('id_no'))){ ?>
                     <li><a href="<?php echo base_url('userlog') ?>"><i class="pe-7s-users"></i> User Login</a></li>
-                    <!-- <li><a href="<?php echo base_url('login') ?>"><i class="pe-7s-settings"></i> Admin Login</a></li> -->
+                    <li><a href="<?php echo base_url('login') ?>"><i class="pe-7s-settings"></i> Admin Login</a></li>
                     <?php }else{ ?>
                     <li><a href="<?php echo base_url('pass_logout') ?>"><i class="pe-7s-key"></i>  <?php echo display('logout') ?></a></li>
                     <?php } ?>

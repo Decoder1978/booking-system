@@ -102,7 +102,8 @@
                              
                         </div>
                     </div>
-                    <fieldset><legend><?php echo display('payment_information') ?></legend>
+
+                    <!-- <fieldset><legend><?php echo display('payment_information') ?></legend>
                          <div class="form-group row">
                         <label for="paytype" class="col-xs-3 col-form-label"><?php echo display('payment_gateway') ?> <i class="text-danger">*</i></label>
                         <div class="col-xs-9">
@@ -138,7 +139,7 @@
                          <input name="bank_commission" type="text" class="form-control" id="bank_commission" placeholder="<?php echo display('bank_commission') ?>" value="<?php echo $website->bank_commission ?>" required>
                         </div>
                     </div>
-                    </fieldset>
+                    </fieldset> -->
 
 
                     
@@ -160,14 +161,14 @@
                     </fieldset>  
 
 
-                    <fieldset><legend><?php echo display('footer_section')?></legend>
+                    <!-- <fieldset><legend><?php echo display('footer_section')?></legend>
                     <div class="form-group row">
                         <label for="google_map" class="col-xs-3 col-form-label"><?php echo display('google_map') ?></label>
                         <div class="col-xs-9">
                             <textarea name="google_map" class="form-control"  placeholder="<?php echo display('google_map') ?>" rows="7"><?php echo $website->google_map ?></textarea>
                         </div>
                     </div>   
-                    </fieldset>
+                    </fieldset> -->
 
 
                     <div class="form-group text-right">

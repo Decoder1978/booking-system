@@ -21,9 +21,9 @@ class Setting extends MX_Controller {
 		$this->form_validation->set_rules('slogan', display('slogan') ,'max_length[255]');
 		$this->form_validation->set_rules('address', display('address') ,'max_length[255]');
 		$this->form_validation->set_rules('email', display('email'),'max_length[100]|valid_email');
-		$this->form_validation->set_rules('paypal_email', display('paypal_email'),'required|max_length[100]|valid_email');
-		$this->form_validation->set_rules('payment_type',display('paypal_transaction'),'required|max_length[50]');
-		$this->form_validation->set_rules('currency', display('currency'),'required|max_length[50]');
+		$this->form_validation->set_rules('paypal_email', display('paypal_email'),'max_length[100]|valid_email');
+		$this->form_validation->set_rules('payment_type',display('paypal_transaction'),'max_length[50]');
+		$this->form_validation->set_rules('currency', display('currency'),'max_length[50]');
 		$this->form_validation->set_rules('phone', display('phone'), 'max_length[20]'); 
 		$this->form_validation->set_rules('status', display('website_status'), 'required|max_length[1]'); 
 		$this->form_validation->set_rules('about',display('about'), 'max_length[255]');  
