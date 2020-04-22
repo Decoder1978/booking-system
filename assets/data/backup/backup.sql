@@ -301,8 +301,8 @@ CREATE TABLE `fleet_type` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
-INSERT INTO `fleet_type` (`id`, `type`, `layout`, `lastseat`, `total_seat`, `seat_numbers`, `fleet_facilities`, `status`) VALUES ('1', 'A/C REGULAR', '2-2', '0', '48', '001 , 002 , 003 , 004 , 005 , 006 , 007 , 009 , 010 , 011 , 012 , 013 , 014 , 014 , 015 , 016 , 017 , 018 , 019 , 020 , 021 , 022 , 023 , 024, 025 , 026 , 027 , 028 , 029 , 030 , 031 , 032 , 033 , 034 , 035 , 036 , 037 , 038 , 039 , 040 , 041 , 042 , 043 ', 'Airconditioned', '1');
-INSERT INTO `fleet_type` (`id`, `type`, `layout`, `lastseat`, `total_seat`, `seat_numbers`, `fleet_facilities`, `status`) VALUES ('2', 'REGULAR', '2-2', '0', '12', '001 , 002 , 003 , 004 , 005 , 006 , 007 , 008 , 009 , 010 , 011 , 012 , ', 'Non-airconditioned', '1');
+INSERT INTO `fleet_type` (`id`, `type`, `layout`, `lastseat`, `total_seat`, `seat_numbers`, `fleet_facilities`, `status`) VALUES ('1', 'EXECUTIVE TICKET', '2-2', '0', '48', '001 , 002 , 003 , 004 , 005 , 006 , 007 , 009 , 010 , 011 , 012 , 013 , 014 , 014 , 015 , 016 , 017 , 018 , 019 , 020 , 021 , 022 , 023 , 024, 025 , 026 , 027 , 028 , 029 , 030 , 031 , 032 , 033 , 034 , 035 , 036 , 037 , 038 , 039 , 040 , 041 , 042 , 043 ', 'Airconditioned', '1');
+INSERT INTO `fleet_type` (`id`, `type`, `layout`, `lastseat`, `total_seat`, `seat_numbers`, `fleet_facilities`, `status`) VALUES ('2', 'ECONOMY TICKET', '2-2', '0', '12', '001 , 002 , 003 , 004 , 005 , 006 , 007 , 008 , 009 , 010 , 011 , 012 , ', 'Non-airconditioned', '1');
 
 
 #
@@ -1022,9 +1022,12 @@ DROP TABLE IF EXISTS `payment_informations`;
 CREATE TABLE `payment_informations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `how_to_pay` text NOT NULL,
-  `terms_and_condition` text NOT NULL,
+  `terms_and_condition` longtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+INSERT INTO `payment_informations` (`id`, `how_to_pay`, `terms_and_condition`) VALUES ('1', 'How to pay', 'BOARDING TIME\r\nPassenger must be on-board 1 hour before the scheduled departure. Passenger must present the TICKET which will be presented to a staff upon entering to the vessel. \r\n\r\nPAYMENT\r\n\r\nPassenger can pay their tickets to the designated ticketing offices. Passenger has 1hour allotment to pay their ticket upon booking online, and if they are failed to do so their ticket will be forfeited. \r\n\r\nTICKET VALIDITY\r\n\r\nTicket is valid for travel on the date, destination and via the RSL-operated vessel specified on the ticket. Any form of alterations made on the ticket is invalid.\r\n\r\nLOST TICKETS\r\n\r\n“NO TICKET, NO TRAVEL” policy will be strictly implemented. \r\n\r\nCANCELLATION OF TRIP\r\n\r\nIn the event of trip cancellation, passengers of the cancelled trip(s) will have to rebook for the next available trip that can accommodate them. The company shall not be responsible for personal losses due to cancellations/­delays because of unforeseen events.\r\n\r\nREFUND & REBOOKING POLICY\r\n\r\nFor reasons that the trip is cancelled outside the scope of the passengers’ capability, a FULL ticket refund will be given to the passenger up to seven (7) days after the date of travel.\r\n\r\nWhen the reason the passenger was not able to board the trip is the passenger’s fault, he/she CANNOT refund the ticket and must purchase a new ticket to ride another vessel. If for any reason the passenger do not wish to ride his/her selected vessel anymore, provided that the vessel hasn’t departed yet, the ticketing office will issue a refund for the passengers with service charge of the following:\r\n\r\n1)	Executive Ticket - 50% service charge (only 50% of the amount will be returned to the passenger)\r\n2)	Economy Ticket - 30% service charge (only 70% of the amount will be returned to the passenger)\r\n\r\nBAGGAGE ALLOWANCE & LIABILITY\r\n\r\nEach passenger is given a baggage allowance of (2) HAND CARRIED BAGGAGE. Excess items will be subject to freight charge. The passenger assumes fill responsibility for all hand carry baggage. \r\n\r\n\r\n\r\nREFUSAL\r\n\r\nThe company reserves the right to refuse accommodation of any passengers for valid reasons. Explosives, flammable, or obnoxious substance are prohibited. \r\n\r\nLIABILITY\r\n\r\nThe company shall not be liable for damages, liabilities, loses, or death arising from Force Majeure. \r\n\r\nVENUE\r\n\r\nParties expressly submit themselves only to the jurisdiction of the courts of SAN ANDRES CATANDUANES to the exclusion of all others on any legal action arising out of this transaction.\r\n\r\nACCEPTANCE OF CONDITION\r\n\r\nThe passenger have accepted and understood the terms and conditions of REGINA SHIPPING LINES upon purchase of this ticket.');
+
 
 #
 # TABLE STRUCTURE FOR: pri_price
@@ -1328,11 +1331,13 @@ CREATE TABLE `ticket_notification` (
   `admin_seen` int(11) NOT NULL DEFAULT 0,
   `booked_by` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 INSERT INTO `ticket_notification` (`id`, `b_idno`, `passenger_id`, `no_tkts`, `amount`, `route_id`, `trip_id`, `booking_time`, `is_seen`, `admin_seen`, `booked_by`) VALUES ('1', 'B41LKFRF', 'PAGE6K3Q', '2', '640', '1', '1', '2020-03-23 08:58:59', '0', '0', '0');
 INSERT INTO `ticket_notification` (`id`, `b_idno`, `passenger_id`, `no_tkts`, `amount`, `route_id`, `trip_id`, `booking_time`, `is_seen`, `admin_seen`, `booked_by`) VALUES ('2', 'BDN8JXBW', 'PAGE6K3Q', '1', '350', '1', '1', '2020-03-23 09:51:14', '0', '0', '1');
 INSERT INTO `ticket_notification` (`id`, `b_idno`, `passenger_id`, `no_tkts`, `amount`, `route_id`, `trip_id`, `booking_time`, `is_seen`, `admin_seen`, `booked_by`) VALUES ('3', 'BWLO8NTG', 'PAGE6K3Q', '1', '350', '1', '1', '2020-03-31 11:17:59', '0', '0', '0');
+INSERT INTO `ticket_notification` (`id`, `b_idno`, `passenger_id`, `no_tkts`, `amount`, `route_id`, `trip_id`, `booking_time`, `is_seen`, `admin_seen`, `booked_by`) VALUES ('4', 'B9EYGWMP', 'PAGE6K3Q', '2', '640', '1', '1', '2020-04-22 08:35:45', '0', '0', '0');
+INSERT INTO `ticket_notification` (`id`, `b_idno`, `passenger_id`, `no_tkts`, `amount`, `route_id`, `trip_id`, `booking_time`, `is_seen`, `admin_seen`, `booked_by`) VALUES ('5', 'BPLDISV3', 'PAGE6K3Q', '1', '290', '1', '1', '2020-04-22 08:57:59', '0', '0', '0');
 
 
 #
@@ -1367,9 +1372,10 @@ CREATE TABLE `tkt_booking` (
   `booked_by` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_no` (`id_no`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
-INSERT INTO `tkt_booking` (`id`, `id_no`, `trip_id_no`, `tkt_passenger_id_no`, `trip_route_id`, `pickup_trip_location`, `drop_trip_location`, `request_facilities`, `price`, `discount`, `adult`, `child`, `special`, `total_seat`, `seat_numbers`, `offer_code`, `tkt_refund_id`, `agent_id`, `booking_date`, `date`, `booking_type`, `payment_status`, `booked_by`) VALUES ('3', 'BDN8JXBW', '1', 'PAGE6K3Q', '1', 'SAN ANDRES', 'TABACO', 'Airconditioned, ', '350', '0', '1', '0', '0', '1', '001,', NULL, NULL, NULL, '2020-03-23 00:00:00', '2020-03-23 09:51:14', 'Cash(Isaac Arcilla)', 'NULL', '1');
+INSERT INTO `tkt_booking` (`id`, `id_no`, `trip_id_no`, `tkt_passenger_id_no`, `trip_route_id`, `pickup_trip_location`, `drop_trip_location`, `request_facilities`, `price`, `discount`, `adult`, `child`, `special`, `total_seat`, `seat_numbers`, `offer_code`, `tkt_refund_id`, `agent_id`, `booking_date`, `date`, `booking_type`, `payment_status`, `booked_by`) VALUES ('6', 'B9EYGWMP', '1', 'PAGE6K3Q', '1', 'SAN', 'TABACO', 'Airconditioned, ', '640', '0', '1', '1', '0', '2', '001, 002, ', NULL, NULL, NULL, '2020-04-23 14:35:15', '2020-04-22 14:35:15', 'Cash', '', '0');
+INSERT INTO `tkt_booking` (`id`, `id_no`, `trip_id_no`, `tkt_passenger_id_no`, `trip_route_id`, `pickup_trip_location`, `drop_trip_location`, `request_facilities`, `price`, `discount`, `adult`, `child`, `special`, `total_seat`, `seat_numbers`, `offer_code`, `tkt_refund_id`, `agent_id`, `booking_date`, `date`, `booking_type`, `payment_status`, `booked_by`) VALUES ('8', 'BPLDISV3', '1', 'PAGE6K3Q', '1', 'TABACO', 'TABACO', NULL, '290', '0', '0', '1', '0', '1', '005, ', NULL, NULL, NULL, '2020-04-23 14:56:51', '2020-04-22 14:56:51', 'Cash', '', '0');
 
 
 #
@@ -1573,7 +1579,7 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-INSERT INTO `user` (`id`, `firstname`, `lastname`, `about`, `email`, `password`, `password_reset_token`, `image`, `last_login`, `last_logout`, `ip_address`, `status`, `is_admin`) VALUES ('1', 'Isaac', 'Arcilla', '', 'isaac@email.com', '21232f297a57a5a743894a0e4a801fc3', NULL, './assets/img/user/csu_556934c2.png', '2020-03-31 11:10:47', '2020-03-23 11:46:40', '::1', '1', '1');
+INSERT INTO `user` (`id`, `firstname`, `lastname`, `about`, `email`, `password`, `password_reset_token`, `image`, `last_login`, `last_logout`, `ip_address`, `status`, `is_admin`) VALUES ('1', 'Isaac', 'Arcilla', '', 'isaac@email.com', '21232f297a57a5a743894a0e4a801fc3', NULL, './assets/img/user/csu_556934c2.png', '2020-04-22 09:04:19', '2020-03-23 11:46:40', '::1', '1', '1');
 
 
 #
@@ -1606,7 +1612,7 @@ CREATE TABLE `ws_booking_history` (
   `status` tinyint(4) DEFAULT 0,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_no` (`id_no`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 INSERT INTO `ws_booking_history` (`id`, `id_no`, `trip_id_no`, `tkt_passenger_id_no`, `trip_route_id`, `pickup_trip_location`, `drop_trip_location`, `request_facilities`, `price`, `discount`, `adult`, `child`, `special`, `total_seat`, `seat_numbers`, `offer_code`, `tkt_refund_id`, `agent_id`, `booking_date`, `date`, `status`) VALUES ('1', 'BTMUARYL', '1', 'PM9SLE36', '1', 'SAN', 'TABACO', 'Airconditioned, ', '640', '0', '1', '1', '0', '2', '001, 002, ', '', NULL, NULL, '2020-03-10 15:55:22', '2020-03-23 15:55:22', '0');
 INSERT INTO `ws_booking_history` (`id`, `id_no`, `trip_id_no`, `tkt_passenger_id_no`, `trip_route_id`, `pickup_trip_location`, `drop_trip_location`, `request_facilities`, `price`, `discount`, `adult`, `child`, `special`, `total_seat`, `seat_numbers`, `offer_code`, `tkt_refund_id`, `agent_id`, `booking_date`, `date`, `status`) VALUES ('2', 'B9RF4XP9', '1', 'PAGE6K3Q', '1', 'TABACO', 'SAN', 'Airconditioned, ', '640', '0', '1', '1', '0', '2', '001, 002, ', '', NULL, NULL, '2020-03-10 15:56:01', '2020-03-23 15:56:01', '0');
@@ -1614,6 +1620,8 @@ INSERT INTO `ws_booking_history` (`id`, `id_no`, `trip_id_no`, `tkt_passenger_id
 INSERT INTO `ws_booking_history` (`id`, `id_no`, `trip_id_no`, `tkt_passenger_id_no`, `trip_route_id`, `pickup_trip_location`, `drop_trip_location`, `request_facilities`, `price`, `discount`, `adult`, `child`, `special`, `total_seat`, `seat_numbers`, `offer_code`, `tkt_refund_id`, `agent_id`, `booking_date`, `date`, `status`) VALUES ('6', 'BZFU0LYV', '1', 'PAGE6K3Q', '1', 'TABACO', 'TABACO', NULL, '350', '0', '1', '0', '0', '1', '001, ', '', NULL, NULL, '2020-03-03 17:23:45', '2020-03-31 17:23:45', '0');
 INSERT INTO `ws_booking_history` (`id`, `id_no`, `trip_id_no`, `tkt_passenger_id_no`, `trip_route_id`, `pickup_trip_location`, `drop_trip_location`, `request_facilities`, `price`, `discount`, `adult`, `child`, `special`, `total_seat`, `seat_numbers`, `offer_code`, `tkt_refund_id`, `agent_id`, `booking_date`, `date`, `status`) VALUES ('7', 'B9A94HLM', '1', 'PAGE6K3Q', '1', 'TABACO', 'TABACO', NULL, '350', '0', '1', '0', '0', '1', '001, ', '', NULL, NULL, '2020-03-03 17:24:55', '2020-03-31 17:24:55', '0');
 INSERT INTO `ws_booking_history` (`id`, `id_no`, `trip_id_no`, `tkt_passenger_id_no`, `trip_route_id`, `pickup_trip_location`, `drop_trip_location`, `request_facilities`, `price`, `discount`, `adult`, `child`, `special`, `total_seat`, `seat_numbers`, `offer_code`, `tkt_refund_id`, `agent_id`, `booking_date`, `date`, `status`) VALUES ('8', 'BI04ALHD', '1', 'PAGE6K3Q', '1', 'SAN', 'TABACO', 'Airconditioned, ', '290', '0', '0', '1', '0', '1', '001, ', '', NULL, NULL, '2020-03-03 17:29:24', '2020-03-31 17:29:24', '0');
+INSERT INTO `ws_booking_history` (`id`, `id_no`, `trip_id_no`, `tkt_passenger_id_no`, `trip_route_id`, `pickup_trip_location`, `drop_trip_location`, `request_facilities`, `price`, `discount`, `adult`, `child`, `special`, `total_seat`, `seat_numbers`, `offer_code`, `tkt_refund_id`, `agent_id`, `booking_date`, `date`, `status`) VALUES ('9', 'BT36D2TX', '1', 'PIQWVIR7', '1', 'TABACO', 'SAN', NULL, '350', '0', '1', '0', '0', '1', '001, ', '', NULL, NULL, '2020-04-22 14:29:02', '2020-04-22 14:29:02', '0');
+INSERT INTO `ws_booking_history` (`id`, `id_no`, `trip_id_no`, `tkt_passenger_id_no`, `trip_route_id`, `pickup_trip_location`, `drop_trip_location`, `request_facilities`, `price`, `discount`, `adult`, `child`, `special`, `total_seat`, `seat_numbers`, `offer_code`, `tkt_refund_id`, `agent_id`, `booking_date`, `date`, `status`) VALUES ('12', 'BV6BEEJ2', '1', 'PBEQXS22', '1', 'TABACO', 'SAN', NULL, '290', '0', '0', '1', '0', '1', '006, ', '', NULL, NULL, '2020-04-23 15:17:27', '2020-04-22 15:17:27', '0');
 
 
 #
@@ -1675,6 +1683,6 @@ CREATE TABLE `ws_setting` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-INSERT INTO `ws_setting` (`id`, `title`, `slogan`, `address`, `email`, `phone`, `favicon`, `logo`, `status`, `timezone`, `about`, `description`, `payment_type`, `paypal_email`, `bank_commission`, `currency`, `google_map`) VALUES ('1', 'RSL Booking System', '', 'Virac, Catanduanes, PH', 'sample@gmail.com', '09123456789', 'application/modules/website/assets/images/icons/e5a567074086228d72ee40cf50163276.png', 'application/modules/website/assets/images/icons/1ad8f706228966f937fc7e2c4a40cb38.png', '1', 'Asia/Taipei', '', '', 'enable', 'mypaypal@email.com', '3', 'PHP', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.7724407117266!2d90.38595131408418!3d23.75549289450067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8a4136c4b61%3A0x19549f5462616f04!2sBDTASK!5e0!3m2!1sen!2sbd!4v1531724548584\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>');
+INSERT INTO `ws_setting` (`id`, `title`, `slogan`, `address`, `email`, `phone`, `favicon`, `logo`, `status`, `timezone`, `about`, `description`, `payment_type`, `paypal_email`, `bank_commission`, `currency`, `google_map`) VALUES ('1', 'RSL Booking System', '', 'Virac, Catanduanes, PH', 'sample@gmail.com', '09123456789', 'application/modules/website/assets/images/icons/b956e8fd695db3ef140612456975971a.png', 'application/modules/website/assets/images/icons/1d3f8cd9368c7caf8d5d9b5d0f790741.png', '1', 'Asia/Taipei', '', '', NULL, NULL, '0', NULL, NULL);
 
 
