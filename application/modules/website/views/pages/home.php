@@ -1,6 +1,6 @@
 <div class="clearfix"></div>
 <div class="main-search-container">
- <!-- <div class="main-search-container" style="background-image: url(<?php echo base_url('application/modules/website/assets/images/bg.jpg') ?>)">  -->
+ <div class="main-search-container" style="background-image: url(<?php echo base_url('application/modules/website/assets/images/regina.jpg') ?>)"> 
     <div class="main-search-inner">
         <div class="container">
             <div class="row">
@@ -14,6 +14,7 @@
                                 <?php echo form_dropdown('start_point', $location_dropdown, $search->start_point, array('class'=>'select2 form-control','required'=>'required', 'data-placeholder'=>display('start_point')) ) ?> 
                                 <i class="fa fa-map-marker"></i>
                             </div>
+
                             <div class="form-group custom-select">
                                 <?php echo form_dropdown('end_point', $location_dropdown, $search->end_point, array('class'=>'select2 form-control','required'=>'required', 'data-placeholder'=>display('end_point')) ) ?> 
                                 <i class="fa fa-map-marker"></i>
