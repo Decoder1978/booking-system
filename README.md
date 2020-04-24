@@ -1,6 +1,6 @@
 <p align="center"><img src="https://www.anexia-it.com/blog/wp-content/uploads/2015/01/codeigniter_logo.png" width="500"></p>
 
-<h2 align="center">🎉 Booking reservation system built with Codeigniter 🎉</h2>
+<h4 align="center">🎉 Booking reservation system built with Codeigniter 🎉</h4>
 
 ## ✨ Prerequisites
 
