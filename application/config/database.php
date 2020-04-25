@@ -76,7 +76,7 @@ $active_record = TRUE;//ci version 2.x
 
 $db['default'] = array(
     'dsn'   => '',
-    'hostname' => 'remotemysql.com"',
+    'hostname' => 'remotemysql.com',
     'username' => 'vTMuqQ8roi',
     'password' => '2wpnP96pEL',
     'database' => 'vTMuqQ8roi',
