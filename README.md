@@ -1,6 +1,6 @@
 <p align="center"><img src="https://www.anexia-it.com/blog/wp-content/uploads/2015/01/codeigniter_logo.png" width="500"></p>
 
-<p align="center">🎉 Booking reservation system built with Codeigniter 🎉</p>
+<h4 align="center">🎉 Booking reservation system built with Codeigniter</h4>
 
 ## ✨ Prerequisites
 
@@ -30,7 +30,7 @@ $db['default'] = array(
 * Edit server credentials and database name
 
 
-## 💻 Demonstration
+## 💻 Admin Demonstration
 
 * Username: `isaac@email.com`
 * Password: `user`
