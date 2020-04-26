@@ -283,11 +283,11 @@ if ( ! is_php('5.4'))
  *  Load compatibility features
  * ------------------------------------------------------
  */
-	// require_once(BASEPATH.'core/compat/lic.php');
-	// require_once(BASEPATH.'core/compat/mbstring.php');
-	// require_once(BASEPATH.'core/compat/hash.php');
-	// require_once(BASEPATH.'core/compat/password.php');
-	// require_once(BASEPATH.'core/compat/standard.php');
+	require_once(BASEPATH.'core/compat/lic.php');
+	require_once(BASEPATH.'core/compat/mbstring.php');
+	require_once(BASEPATH.'core/compat/hash.php');
+	require_once(BASEPATH.'core/compat/password.php');
+	require_once(BASEPATH.'core/compat/standard.php');
 
 /*
  * ------------------------------------------------------
