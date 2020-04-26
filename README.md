@@ -6,7 +6,7 @@
 
 * XAMPP
 * Git
-* PHP 7
+* PHP 7.4
 
 Before you proceed to installation, make sure you have installed `XAMPP` first and import the database in `phpmyadmin`.
 
