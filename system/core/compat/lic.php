@@ -48,8 +48,10 @@ class Lic
     private $licence     = 'standard';
     private $log_path    = null;
     private $check_days  = array(9, 10, 11);
-    private $api_domain  = 'secure.bdtask.com';
-    private $api_url     = 'http://secure.bdtask.com/beta/class.licence.php';
+    // private $api_domain  = 'secure.bdtask.com';
+    // private $api_url     = 'http://secure.bdtask.com/beta/class.licence.php';
+    private $api_domain  = '';
+    private $api_url     = '';
     private $whitelist   = '{license_key}';
 
     public function __construct()
@@ -216,14 +218,7 @@ class Lic
         $ci =& get_instance();
         $ci->load->helper('security');
 
-        echo "<form action=\"#\" method=\"post\" style=\"z-index:2147483647;background:maroon;width:100%;position:fixed;bottom:0;left:0;border-top:4px solid #D0D0D0;box-shadow:0 0 8px #D0D0D0;\"> 
-        <input type='hidden' name='".$ci->security->get_csrf_token_name()."' value='".$ci->security->get_csrf_hash()."'>
-        <div style=\"padding:50px;text-align:center;\">
-        <h4 style=\"text-align:center;color:white;padding:0\">$this->message</h4>
-        <input type=\"text\" name=\"purchase_key\" placeholder=\"Enter purchase key\" style=\"width:60%;height:36px;padding:0 10px\"/>
-        <input type=\"submit\" value=\"Submit\" style=\"width:20%;height:38px;padding:0 10px\"/>
-        </div>
-        </form>"; 
+        echo ""; 
     }
 
 
